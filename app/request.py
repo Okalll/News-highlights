@@ -9,7 +9,7 @@ Article = article.Article
 api_key = app.config['ARTICLE_API_KEY']
 
 # Getting the article base url
-base_url = app.config["ARTICLE_API_BASE_URL"]
+base_url = app.config['ARTICLE_API_BASE_URL']
 
 
 def get_articles(category):
@@ -26,12 +26,12 @@ def get_articles(category):
 
         if get_articles_response['articles']:
             article_articles_list = get_articles_response['articles']
-            article_articles = process_results(article_articles_list)
+            article_articles = process_articles(article_articles_list)
 
     return article_articles
 
 
-def process_results(article_list):
+def process_articles(article_list):
     '''
     Function  that processes the article result and transform them to a list of Objects
 
@@ -41,7 +41,7 @@ def process_results(article_list):
     Returns :
         article_results: A list of article objects
     '''
-    article_results = []
+    article_articles = []
     for article_item in article_list:
         name = article_item.get('name')
         author = article_item.get('author')
