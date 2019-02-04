@@ -1,17 +1,11 @@
+from flask import render_template
+from app import app
+
 # Views
-@app.route('news')
-def movie(news):
+@app.route('/article/<article_name>')
+def movie(article_name):
 
     '''
-    View news page function that returns the news details page and its data
+    View article page function that returns the article details page and its data
     '''
-    return render_template('index.html')
-
-def index():
-
-    '''
-    View root page function that returns the index page and its data
-    '''
-
-    title = 'Home - Welcome to The best News Website Online'
-    return render_template('index.html', title = title)
+    return render_template('article.html',name = article_name)
