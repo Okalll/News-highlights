@@ -1,1 +1,44 @@
-<h1 text-align = "center"> World News </h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  {% if title %}
+  <title> {{ title }}</title>
+  {% else %}
+  <title> Welcome to the best News website </title>
+  {% endif %}
+</head>
+
+<body>
+  <!-- Popular article -->
+        <h3> Popular Articles </h3>
+         <ul>
+            {% for popular_article in popular %}
+                <li>{{ popular_article.title}}</li>
+            {% endfor %}
+        </ul>
+
+        <!-- Business article  -->
+        <h3> Business articles </h3>
+         <ul>
+            {% for business_article in business %}
+                <li>{{ business_article.title}}</li>
+            {% endfor %}
+        </ul>
+        <!-- Sports article -->
+        <h3> Sports articles </h3>
+         <ul>
+            {% for sports_article in sports %}
+                <li>{{ sports_article.title}}</li>
+            {% endfor %}
+        </ul>
+        <h3> Entertainment articles </h3>
+         <ul>
+            {% for entertainment_article in entertainment %}
+                <li>{{ entertainment_article.title}}</li>
+            {% endfor %}
+        </ul>
+</body>
+
+</html>
