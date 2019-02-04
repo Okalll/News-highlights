@@ -1,3 +1,4 @@
+{% import 'macros.htm as macro%'}
 <!DOCTYPE html>
 <html>
 
@@ -12,32 +13,24 @@
 
 <body>
   <!-- Popular article -->
-        <h3> Popular Articles </h3>
+         <h3> Popular Movies </h3>
          <ul>
-            {% for popular_article in popular %}
-                <li>{{ popular_article.title}}</li>
-            {% endfor %}
+            {{ macro.displayArticleList(popular)}}
         </ul>
 
         <!-- Business article  -->
         <h3> Business articles </h3>
          <ul>
-            {% for business_article in business %}
-                <li>{{ business_article.title}}</li>
-            {% endfor %}
+            {{ macro.displayArticleList(business)}}
         </ul>
         <!-- Sports article -->
         <h3> Sports articles </h3>
          <ul>
-            {% for sports_article in sports %}
-                <li>{{ sports_article.title}}</li>
-            {% endfor %}
+            {{ macro.displayArticleList(sports)}}
         </ul>
         <h3> Entertainment articles </h3>
          <ul>
-            {% for entertainment_article in entertainment %}
-                <li>{{ entertainment_article.title}}</li>
-            {% endfor %}
+            {{ macro.displayArticleList(entertainment)}}
         </ul>
 </body>
 
